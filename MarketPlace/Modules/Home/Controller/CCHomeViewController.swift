@@ -31,7 +31,7 @@ extension CCHomeViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = RGBCOLOR(r: 246, g: 247, b: 250)
-        
+        self.headerView.isHidden = true
         
         setUI()
     }
@@ -40,7 +40,12 @@ extension CCHomeViewController{
     
     func setUI(){
         
-        
+        let navView = MPHomeNavigationView()
+        view.addSubview(navView)
+        navView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(90)
+        }
         
         
     }
