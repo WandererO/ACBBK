@@ -153,6 +153,7 @@ let kArtGreyColor : UIColor = .hexColor("17171A")
 let kFifaMainColor : UIColor = .hexColor("FFC619")
 
 let kCareMainColor : UIColor = .hexColor("00BF70")
+let kMainBlueColor : UIColor = RGBCOLOR(r: 33, g: 111, b: 241)
 
 
 
