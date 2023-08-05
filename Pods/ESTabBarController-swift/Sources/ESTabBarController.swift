@@ -30,29 +30,7 @@ public typealias ESTabBarControllerShouldHijackHandler = ((_ tabBarController: U
 /// 自定义点击事件回调类型
 public typealias ESTabBarControllerDidHijackHandler = ((_ tabBarController: UITabBarController, _ viewController: UIViewController, _ index: Int) -> (Void))
 
-
 open class ESTabBarController: UITabBarController, ESTabBarDelegate {
-    
-    // 屏幕宽度
-    let SCREEN_WIDTH : CGFloat = UIScreen.main.bounds.size.width;
-    // 屏幕高度
-    let SCREEN_HEIGHT: CGFloat  = UIScreen.main.bounds.size.height;
-    
-    // tabbar高度
-    let TABBAR_HEIGHT : CGFloat = is_iPhoneX() ? 83.0 : 49.0;
-    
-    // 判断是否设备是iphoneX系列
-    static func is_iPhoneX() -> (Bool) {
-        let boundsSize = UIScreen.main.bounds.size;
-        // iPhoneX,XS
-       
-        if boundsSize.width >= 375 && boundsSize.height >= 812 {
-            return true;
-        }
-        
-       
-        return false;
-    }
     
     /// 打印异常
     public static func printError(_ description: String) {
@@ -111,18 +89,11 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
     /// Customize set tabBar use KVC.
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
         let tabBar = { () -> ESTabBar in 
             let tabBar = ESTabBar()
             tabBar.delegate = self
             tabBar.customDelegate = self
             tabBar.tabBarController = self
-            
-            
-            
             return tabBar
         }()
         self.setValue(tabBar, forKey: "tabBar")
@@ -159,9 +130,7 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
     
     // MARK: - ESTabBar delegate
     internal func tabBar(_ tabBar: UITabBar, shouldSelect item: UITabBarItem) -> Bool {
-        
         if let idx = tabBar.items?.firstIndex(of: item), let vc = viewControllers?[idx] {
-            
             return delegate?.tabBarController?(self, shouldSelect: vc) ?? true
         }
         return true
