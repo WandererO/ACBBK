@@ -44,7 +44,7 @@ extension CCHomeViewController{
         view.addSubview(navView)
         navView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(90)
+            make.height.equalTo(100)
         }
         
         let contentView = MPHomeContentView()

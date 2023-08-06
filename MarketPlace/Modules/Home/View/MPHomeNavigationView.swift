@@ -45,19 +45,19 @@ class MPHomeNavigationView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .gray
+//        self.backgroundColor = .gray
         
         self.addSubview(headerBtn)
         headerBtn.snp.makeConstraints { make in
             make.left.equalTo(15)
-            make.top.equalTo(35)
+            make.top.equalTo(40)
             make.height.width.equalTo(50)
         }
         
         self.addSubview(tipsLab)
         tipsLab.snp.makeConstraints { make in
             make.left.equalTo(headerBtn.snp.right).offset(10)
-            make.top.equalTo(35)
+            make.top.equalTo(40)
         }
         
         self.addSubview(nameLab)
@@ -70,7 +70,7 @@ class MPHomeNavigationView: BaseView {
         notiBtn.snp.makeConstraints { make in
             make.right.equalTo(-15)
             make.height.width.equalTo(50)
-            make.top.equalTo(35)
+            make.top.equalTo(40)
         }
     }
     

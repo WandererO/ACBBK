@@ -11,11 +11,29 @@ class MPHomeContentView: BaseView {
     
     let scrollView = UIScrollView()
     
+    lazy var quickAcessView : UICollectionView  = { //金刚区
+        
+        let layout = UICollectionViewFlowLayout.init()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 15 // 列间距
+        layout.minimumInteritemSpacing = 10 // 行间距
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15) // 设置item的四边边距
+        
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(UINib(nibName: "MPHomeOtherServicesCell", bundle: nil), forCellWithReuseIdentifier: "MPHomeOtherServicesCell")
+        return collectionView
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         scrollView.backgroundColor =  RGBCOLOR(r: 246, g: 247, b: 250)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         self.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.left.top.bottom.equalToSuperview()
@@ -78,8 +96,56 @@ class MPHomeContentView: BaseView {
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.top.equalTo(overViewBtn.snp.bottom).offset(10)
-            make.height.equalTo(100)
+            make.height.equalTo(90)
         }
+        serviceV.selectBtnBlock = {[weak self] tag in
+            guard let self = self else{return}
+            if tag == 0 {
+                let vc = MPCurrentAccountController()
+                self.viewContainingController()?.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
+        let insuranceLab = UILabel()
+        insuranceLab.text = "Insurance services".localString()
+        insuranceLab.textColor = kBlack3TextColor
+        insuranceLab.font = FONT_R(size: 16)
+        scrollView.addSubview(insuranceLab)
+        insuranceLab.snp.makeConstraints { make in
+            make.left.equalTo(15)
+            make.top.equalTo(serviceV.snp.bottom).offset(15)
+        }
+        
+        let insuranceV = MPHomeInsuranceView()
+        scrollView.addSubview(insuranceV)
+        insuranceV.snp.makeConstraints { make in
+            make.left.equalTo(15)
+            make.right.equalTo(-15)
+            make.top.equalTo(insuranceLab.snp.bottom).offset(10)
+            make.height.equalTo(80)
+        }
+        
+        let otherLab = UILabel()
+        otherLab.text = "Other services".localString()
+        otherLab.textColor = kBlack3TextColor
+        otherLab.font = FONT_R(size: 16)
+        scrollView.addSubview(otherLab)
+        otherLab.snp.makeConstraints { make in
+            make.left.equalTo(15)
+            make.top.equalTo(insuranceV.snp.bottom).offset(15)
+        }
+        
+        
+        scrollView.addSubview(quickAcessView)
+        quickAcessView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(otherLab.snp.bottom).offset(5)
+            make.height.equalTo(110)
+            make.bottom.equalToSuperview()
+        }
+        
+        
+        
         
     }
     
@@ -181,11 +247,7 @@ class MPHomeRewardsView : UIButton  {
             make.left.equalTo(15)
             make.top.equalTo(labs.snp.bottom).offset(10)
         }
-        
-        
-        
-        
-        
+
     }
     
     required init?(coder: NSCoder) {
@@ -196,7 +258,7 @@ class MPHomeRewardsView : UIButton  {
 
 class MPHomeServicesView : BaseView {
     
-    
+    var selectBtnBlock:SelectBlock?
     var buttonS:[MPButtons] = []
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -217,7 +279,7 @@ class MPHomeServicesView : BaseView {
             btn.rx.tap.subscribe(onNext: { [weak self] in
                 guard let self = self else {return}
                 let tag = btn.tag
-//                self.selectBtnBlock?(tag)
+                self.selectBtnBlock?(tag)
             }).disposed(by: self.disposeBag)
             i += 1
             self.addSubview(btn)
@@ -287,6 +349,87 @@ class MPButtons:UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+class MPHomeInsuranceView : UIButton {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .white
+        self.corner(cornerRadius: 10)
+        
+        let linV = UIView()
+        linV.backgroundColor = RGBCOLOR(r: 244, g: 191, b: 68)
+        self.addSubview(linV)
+        linV.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(15)
+            make.width.equalTo(4)
+            make.height.equalTo(20)
+        }
+        
+        let titlaLab = UILabel()
+        titlaLab.text = "ACB x Sun Life".localString()
+        titlaLab.textColor = kBlack3TextColor
+        titlaLab.font = FONT_SB(size: 18)
+        self.addSubview(titlaLab)
+        titlaLab.snp.makeConstraints { make in
+            make.left.equalTo(linV.snp.right).offset(15)
+            make.top.equalTo(15)
+        }
+        
+        let contentLab = UILabel()
+        contentLab.text = "Making lives brighter".localString()
+        contentLab.textColor = RGBCOLOR(r: 86, g: 86, b: 86)
+        contentLab.font = FONT_R(size: 16)
+        self.addSubview(contentLab)
+        contentLab.snp.makeConstraints { make in
+            make.left.equalTo(titlaLab.snp.left)
+            make.top.equalTo(titlaLab.snp.bottom).offset(10)
+        }
+        
+        let rightImg = UIImageView()
+        rightImg.image = UIImage(named: "ic_arrow_back_right")
+        self.addSubview(rightImg)
+        rightImg.snp.makeConstraints { make in
+            make.right.equalTo(-15)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(16)
+        }
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension MPHomeContentView : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           
+        
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MPHomeOtherServicesCell", for: indexPath) as! MPHomeOtherServicesCell
+//        cell.model = marketListModels[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (collectionView.frame.width - 80)
+        return CGSize(width: width, height: 108)//collectionView.frame.height )
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
 }
 
 

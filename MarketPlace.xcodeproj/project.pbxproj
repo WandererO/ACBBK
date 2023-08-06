@@ -45,6 +45,14 @@
 		049CC8DE2A5BFE5D00C12E44 /* LXFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CC8DD2A5BFE5D00C12E44 /* LXFit.swift */; };
 		049D9D5A2A35A2310037CCBC /* MPSelectTopTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D9D592A35A2310037CCBC /* MPSelectTopTableView.swift */; };
 		049D9D5C2A35A4BD0037CCBC /* MPSelectTopPopTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D9D5B2A35A4BD0037CCBC /* MPSelectTopPopTableController.swift */; };
+		049F296D2A7F62240088487A /* MPHomeOtherServicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F296B2A7F62240088487A /* MPHomeOtherServicesCell.swift */; };
+		049F296E2A7F62240088487A /* MPHomeOtherServicesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F296C2A7F62240088487A /* MPHomeOtherServicesCell.xib */; };
+		049F29712A7F75540088487A /* MPCurrentAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F296F2A7F75540088487A /* MPCurrentAccountController.swift */; };
+		049F29722A7F75540088487A /* MPCurrentAccountController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F29702A7F75540088487A /* MPCurrentAccountController.xib */; };
+		049F29752A7F8E070088487A /* MPCurrentAccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F29732A7F8E070088487A /* MPCurrentAccountInfoController.swift */; };
+		049F29762A7F8E070088487A /* MPCurrentAccountInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F29742A7F8E070088487A /* MPCurrentAccountInfoController.xib */; };
+		049F29792A7FC67D0088487A /* MPTranstionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F29772A7FC67D0088487A /* MPTranstionCell.swift */; };
+		049F297A2A7FC67D0088487A /* MPTranstionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049F29782A7FC67D0088487A /* MPTranstionCell.xib */; };
 		04A0F6202A63C4B200F286EF /* EWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F61F2A63C4B200F286EF /* EWTextField.swift */; };
 		04A85F3D2A6A77A700CAAB2D /* MPBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A85F3C2A6A77A700CAAB2D /* MPBezierView.swift */; };
 		04BD7C3729D536B5009480B3 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7C3629D536B5009480B3 /* BaseTextField.swift */; };
@@ -212,6 +220,14 @@
 		049CC8DD2A5BFE5D00C12E44 /* LXFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXFit.swift; sourceTree = "<group>"; };
 		049D9D592A35A2310037CCBC /* MPSelectTopTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPSelectTopTableView.swift; sourceTree = "<group>"; };
 		049D9D5B2A35A4BD0037CCBC /* MPSelectTopPopTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPSelectTopPopTableController.swift; sourceTree = "<group>"; };
+		049F296B2A7F62240088487A /* MPHomeOtherServicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPHomeOtherServicesCell.swift; sourceTree = "<group>"; };
+		049F296C2A7F62240088487A /* MPHomeOtherServicesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPHomeOtherServicesCell.xib; sourceTree = "<group>"; };
+		049F296F2A7F75540088487A /* MPCurrentAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCurrentAccountController.swift; sourceTree = "<group>"; };
+		049F29702A7F75540088487A /* MPCurrentAccountController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPCurrentAccountController.xib; sourceTree = "<group>"; };
+		049F29732A7F8E070088487A /* MPCurrentAccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCurrentAccountInfoController.swift; sourceTree = "<group>"; };
+		049F29742A7F8E070088487A /* MPCurrentAccountInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPCurrentAccountInfoController.xib; sourceTree = "<group>"; };
+		049F29772A7FC67D0088487A /* MPTranstionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPTranstionCell.swift; sourceTree = "<group>"; };
+		049F29782A7FC67D0088487A /* MPTranstionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPTranstionCell.xib; sourceTree = "<group>"; };
 		04A0F61F2A63C4B200F286EF /* EWTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWTextField.swift; sourceTree = "<group>"; };
 		04A85F3C2A6A77A700CAAB2D /* MPBezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPBezierView.swift; sourceTree = "<group>"; };
 		04BD7C3629D536B5009480B3 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
@@ -687,6 +703,10 @@
 			children = (
 				0438E27A2A7D3FCF00B1A309 /* MPHomeNavigationView.swift */,
 				0438E27C2A7D47B400B1A309 /* MPHomeContentView.swift */,
+				049F296B2A7F62240088487A /* MPHomeOtherServicesCell.swift */,
+				049F296C2A7F62240088487A /* MPHomeOtherServicesCell.xib */,
+				049F29772A7FC67D0088487A /* MPTranstionCell.swift */,
+				049F29782A7FC67D0088487A /* MPTranstionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -754,6 +774,10 @@
 			isa = PBXGroup;
 			children = (
 				587317E32850F75C00D5F867 /* CCHomeViewController.swift */,
+				049F296F2A7F75540088487A /* MPCurrentAccountController.swift */,
+				049F29702A7F75540088487A /* MPCurrentAccountController.xib */,
+				049F29732A7F8E070088487A /* MPCurrentAccountInfoController.swift */,
+				049F29742A7F8E070088487A /* MPCurrentAccountInfoController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1127,12 +1151,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049F296E2A7F62240088487A /* MPHomeOtherServicesCell.xib in Resources */,
 				2260931D299F4BE400B284DB /* iconfont.ttf in Resources */,
 				22609321299F4BE400B284DB /* iconfont.woff2 in Resources */,
+				049F297A2A7FC67D0088487A /* MPTranstionCell.xib in Resources */,
+				049F29722A7F75540088487A /* MPCurrentAccountController.xib in Resources */,
 				98AFF799280E97A10035387C /* LaunchScreen.storyboard in Resources */,
 				049CC8D82A5BFC4600C12E44 /* LXQRCode.bundle in Resources */,
 				98AFF796280E97A10035387C /* Assets.xcassets in Resources */,
 				2260931C299F4BE400B284DB /* iconfont.js in Resources */,
+				049F29762A7F8E070088487A /* MPCurrentAccountInfoController.xib in Resources */,
 				220F5BE12A21D4AE000C02BD /* Color.xcassets in Resources */,
 				22DDAEF02A35E41B00A1FF3C /* MPCollectionSelectCell.xib in Resources */,
 				0438E2752A7CE1BE00B1A309 /* MPMoreViewController.xib in Resources */,
@@ -1245,6 +1273,7 @@
 				962CFFCB287AB4D0001D6A0D /* CCHomeModel.swift in Sources */,
 				F7361C0A280EA523001DA340 /* SwiftHeader.swift in Sources */,
 				04BD7C3729D536B5009480B3 /* BaseTextField.swift in Sources */,
+				049F29712A7F75540088487A /* MPCurrentAccountController.swift in Sources */,
 				585D0DC928561E1A00993291 /* FSPagerViewCell.swift in Sources */,
 				F79E5282282618D300032CAE /* NSObject+Ext.swift in Sources */,
 				96FFAB4D285E1F6F004D321D /* Snapkit+Extension.swift in Sources */,
@@ -1293,6 +1322,7 @@
 				22DDAEEF2A35E41B00A1FF3C /* MPCollectionSelectCell.swift in Sources */,
 				049CC8DE2A5BFE5D00C12E44 /* LXFit.swift in Sources */,
 				98A7DC1B2819626000D9989C /* QRcode.swift in Sources */,
+				049F296D2A7F62240088487A /* MPHomeOtherServicesCell.swift in Sources */,
 				F79F08CA28252A8100B9777F /* CacheDataManager.swift in Sources */,
 				0448050729CB23200064ADD7 /* EWPopMenu.swift in Sources */,
 				962CFFC5287A9700001D6A0D /* CCLoginModel.swift in Sources */,
@@ -1301,6 +1331,7 @@
 				F77F9C992811608B005BEEDF /* NSAttributedString+Extension.swift in Sources */,
 				C2E75A352A681962005A0BF5 /* UIViewController+Extend.swift in Sources */,
 				0438E2742A7CE1BE00B1A309 /* MPMoreViewController.swift in Sources */,
+				049F29752A7F8E070088487A /* MPCurrentAccountInfoController.swift in Sources */,
 				0477651729C950330069B4F3 /* NBBottomSheetPresentationController.swift in Sources */,
 				F78EF184281BC527001BC933 /* BaseScrollView.swift in Sources */,
 				047FB87829AF6AC000B652F5 /* InputViews.swift in Sources */,
@@ -1325,6 +1356,7 @@
 				9677EC8E2870A5B200A023F2 /* LabelViews.swift in Sources */,
 				F71E165C280FF74F007F01D2 /* NetworkHelper.swift in Sources */,
 				96FFAB53285E318F004D321D /* LableRenderable.swift in Sources */,
+				049F29792A7FC67D0088487A /* MPTranstionCell.swift in Sources */,
 				9880B46B281A67B100508DB7 /* Loaf.swift in Sources */,
 				C2EF818D2A6A52BB00432A2B /* CommonUtil.swift in Sources */,
 				98AFF7E0280EA0A70035387C /* UIColor+Extension.swift in Sources */,

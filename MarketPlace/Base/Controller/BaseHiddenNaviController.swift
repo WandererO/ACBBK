@@ -146,8 +146,8 @@ class BaseHiddenNaviController: BaseViewController {
         self.view.addSubview(headerView)
         headerView.addSubview(topView)
         //要有frame后才可以调用
-        headerView.setGradMainColor(size: CGSize(width:SCREEN_WIDTH, height: 48 + STATUSBAR_HIGH))
-        
+//        headerView.setGradMainColor(size: CGSize(width:SCREEN_WIDTH, height: 48 + STATUSBAR_HIGH))
+        headerView.backgroundColor = .white
         headerView.snp.makeConstraints { make in
             
             make.left.right.equalToSuperview()
@@ -169,8 +169,8 @@ class BaseHiddenNaviController: BaseViewController {
         }
 
         titleLab.removeFromSuperview()
-        titleLab.textColor = .white//kBlackTextColor
-        titleLab.font = FONT_SB(size: 18)
+        titleLab.textColor = kBlackTextColor
+        titleLab.font = FONT_R(size: 18)
         titleLab.textAlignment = .center
         topView.addSubview(titleLab)
         titleLab.snp.makeConstraints { make in
@@ -186,12 +186,13 @@ class BaseHiddenNaviController: BaseViewController {
             make.centerY.equalToSuperview().offset(-5)
         }
 
-        topViewLeftBtn.setImage(UIImage(named: ""), for: .normal)
+        topViewLeftBtn.setImage(UIImage(named: "ic_arrow_back_16"), for: .normal)
         topView.addSubview(topViewLeftBtn)
         topViewLeftBtn.snp.makeConstraints { make in
             
             make.left.equalTo(15)
             make.height.equalTo(54)
+            
             make.centerY.equalToSuperview().offset(-5)
         }
         
