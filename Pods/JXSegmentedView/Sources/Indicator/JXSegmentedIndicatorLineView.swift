@@ -12,6 +12,7 @@ public enum JXSegmentedIndicatorLineStyle {
     case normal
     case lengthen
     case lengthenOffset
+//    case screenHalf
 }
 
 open class JXSegmentedIndicatorLineView: JXSegmentedIndicatorBaseView {
@@ -90,6 +91,8 @@ open class JXSegmentedIndicatorLineView: JXSegmentedIndicatorBaseView {
                 targetX = JXSegmentedViewTool.interpolate(from:leftX + lineScrollOffsetX, to: rightX, percent: CGFloat((percent - 0.5)*2))
                 targetWidth = JXSegmentedViewTool.interpolate(from: maxWidth, to: rightWidth, percent: CGFloat((percent - 0.5)*2))
             }
+//        case .screenHalf:
+            
         }
 
         self.frame.origin.x = targetX

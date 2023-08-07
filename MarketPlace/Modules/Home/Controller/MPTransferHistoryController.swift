@@ -1,16 +1,13 @@
 //
-//  MPCurrentAccountInfoController.swift
+//  MPTransferHistoryController.swift
 //  MarketPlace
 //
-//  Created by mac on 2023/8/6.
+//  Created by mac on 2023/8/7.
 //
 
 import UIKit
 
-class MPCurrentAccountInfoController: BaseHiddenNaviController {
-
-    @IBOutlet weak var recentView: UIView!
-    @IBOutlet weak var infoBgView: UIView!
+class MPTransferHistoryController: BaseHiddenNaviController {
     
     lazy var tableView : BaseTableView = {
         
@@ -24,31 +21,45 @@ class MPCurrentAccountInfoController: BaseHiddenNaviController {
         table.autoresizingMask  = .flexibleHeight
         return table
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Current account(s)".localString()
+        self.title = "Transaction history".localString()
         self.view.backgroundColor = RGBCOLOR(r: 243, g: 246, b: 248)
-        // Do any additional setup after loading the view.
-        self.infoBgView.clipsToBounds = false
-        self.infoBgView.setShadow(width: 0, bColor: kLineColor, sColor: kBlackTextColor, offset: CGSize(width: 0, height: 6), opacity: 0.1, radius: 8)
-        self.infoBgView.layer.shadowRadius = 14
+        topViewRightBtn.setImage(UIImage(named: "filter"), for: .normal)
+        
+        setUI()
+    }
+    
+    func setUI(){
+        let headerV = MPHistoryHeaderView()
+        view.addSubview(headerV)
+        headerV.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(95)
+            make.top.equalTo(TOP_HEIGHT)
+        }
+        
+        let tipLab = UILabel()
+        tipLab.text = "Last 20 transactions".localString()
+        tipLab.textColor = kBlackTextColor
+        tipLab.font = FONT_R(size: 14)
+        self.view.addSubview(tipLab)
+        tipLab.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(headerV.snp.bottom).offset(15)
+        }
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(recentView.snp.bottom)
+            make.left.bottom.right.equalToSuperview()
+            make.top.equalTo(tipLab.snp.bottom).offset(15)
         }
     }
 
-    @IBAction func allClick(_ sender: Any) {
-        
-        let vc = MPTransferHistoryController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
-extension MPCurrentAccountInfoController : UITableViewDataSource , UITableViewDelegate{
+extension MPTransferHistoryController : UITableViewDataSource , UITableViewDelegate{
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

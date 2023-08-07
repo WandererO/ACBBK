@@ -56,6 +56,8 @@
 		04A0F6202A63C4B200F286EF /* EWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0F61F2A63C4B200F286EF /* EWTextField.swift */; };
 		04A85F3D2A6A77A700CAAB2D /* MPBezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A85F3C2A6A77A700CAAB2D /* MPBezierView.swift */; };
 		04BD7C3729D536B5009480B3 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD7C3629D536B5009480B3 /* BaseTextField.swift */; };
+		04D97E812A808E2D00F6D710 /* MPTransferHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97E802A808E2D00F6D710 /* MPTransferHistoryController.swift */; };
+		04D97E832A808EEF00F6D710 /* MPHistoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D97E822A808EEF00F6D710 /* MPHistoryHeaderView.swift */; };
 		220F5BE12A21D4AE000C02BD /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220F5BE02A21D4AE000C02BD /* Color.xcassets */; };
 		2248075329F0D7FB00226026 /* StackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248075229F0D7FB00226026 /* StackView+Extension.swift */; };
 		2260931A299F4BE400B284DB /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = 22609312299F4BE300B284DB /* demo.css */; };
@@ -231,6 +233,8 @@
 		04A0F61F2A63C4B200F286EF /* EWTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWTextField.swift; sourceTree = "<group>"; };
 		04A85F3C2A6A77A700CAAB2D /* MPBezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPBezierView.swift; sourceTree = "<group>"; };
 		04BD7C3629D536B5009480B3 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		04D97E802A808E2D00F6D710 /* MPTransferHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPTransferHistoryController.swift; sourceTree = "<group>"; };
+		04D97E822A808EEF00F6D710 /* MPHistoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPHistoryHeaderView.swift; sourceTree = "<group>"; };
 		220F5BE02A21D4AE000C02BD /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		2248075229F0D7FB00226026 /* StackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StackView+Extension.swift"; sourceTree = "<group>"; };
 		225F3C8D29A266F000295ED2 /* MarketPlace.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MarketPlace.entitlements; sourceTree = "<group>"; };
@@ -707,6 +711,7 @@
 				049F296C2A7F62240088487A /* MPHomeOtherServicesCell.xib */,
 				049F29772A7FC67D0088487A /* MPTranstionCell.swift */,
 				049F29782A7FC67D0088487A /* MPTranstionCell.xib */,
+				04D97E822A808EEF00F6D710 /* MPHistoryHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 				049F29702A7F75540088487A /* MPCurrentAccountController.xib */,
 				049F29732A7F8E070088487A /* MPCurrentAccountInfoController.swift */,
 				049F29742A7F8E070088487A /* MPCurrentAccountInfoController.xib */,
+				04D97E802A808E2D00F6D710 /* MPTransferHistoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1317,6 +1323,7 @@
 				0448050629CB23200064ADD7 /* EWMenuTableViewCell.swift in Sources */,
 				04396D1229B5CFC900FCFB23 /* ButtonViews.swift in Sources */,
 				98AFF7FB280EC6E70035387C /* NetWorkModel.swift in Sources */,
+				04D97E812A808E2D00F6D710 /* MPTransferHistoryController.swift in Sources */,
 				98AFF78D280E979F0035387C /* AppDelegate.swift in Sources */,
 				F71E165F280FF99A007F01D2 /* BaseModel.swift in Sources */,
 				22DDAEEF2A35E41B00A1FF3C /* MPCollectionSelectCell.swift in Sources */,
@@ -1370,6 +1377,7 @@
 				981A25612834F0E200DB858E /* DateManager.swift in Sources */,
 				C2E75A332A67E355005A0BF5 /* NSObject+Extend.swift in Sources */,
 				F7CFF0502812CBC10063615D /* TipManager.swift in Sources */,
+				04D97E832A808EEF00F6D710 /* MPHistoryHeaderView.swift in Sources */,
 				988F8617282BAAA9008D9EED /* Date+Category.swift in Sources */,
 				585D0DCD28561E1A00993291 /* FSPagerViewObjcCompat.m in Sources */,
 				04968D1729F7C7DA00E18E6A /* MPSelectPopView.swift in Sources */,

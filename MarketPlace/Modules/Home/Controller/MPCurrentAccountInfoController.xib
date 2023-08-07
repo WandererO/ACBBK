@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MPCurrentAccountInfoController" customModule="MarketPlace" customModuleProvider="target">
             <connections>
+                <outlet property="infoBgView" destination="4tT-U8-nCj" id="KZ6-qp-vA1"/>
                 <outlet property="recentView" destination="XwH-7O-szh" id="iQ1-yf-5Yx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -117,7 +118,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="transfers_white"/>
+                            <state key="normal" image="saving_white"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="30"/>
@@ -134,7 +135,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="transfers_white"/>
+                            <state key="normal" image="payment_white"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="30"/>
@@ -151,7 +152,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="transfers_white"/>
+                            <state key="normal" image="scan_qr_white"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="30"/>
@@ -183,7 +184,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Wh8-X5-xk1" firstAttribute="top" secondItem="nR4-0D-bYC" secondAttribute="bottom" constant="10" id="0b8-87-m6A"/>
                         <constraint firstItem="cgQ-wK-uQV" firstAttribute="centerX" secondItem="v3o-15-SoV" secondAttribute="centerX" id="1vG-cX-ujW"/>
@@ -223,6 +224,21 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="IB_shadowRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="IB_shadowOpacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="IB_shadowOffset">
+                            <size key="value" width="0.0" height="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="IB_shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="IB_shadowAlpha">
+                            <real key="value" value="0.050000000000000003"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-7O-szh">
@@ -247,6 +263,9 @@
                             <state key="normal" title="View all" image="ic_arrow_back_right">
                                 <color key="titleColor" red="0.23137254900000001" green="0.4549019608" blue="0.96862745100000003" alpha="1" colorSpace="deviceRGB"/>
                             </state>
+                            <connections>
+                                <action selector="allClick:" destination="-1" eventType="touchUpInside" id="aiK-hK-oXK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -275,13 +294,13 @@
     <resources>
         <image name="ic_arrow_back_right" width="24" height="24"/>
         <image name="ic_time_machine" width="24" height="24"/>
+        <image name="payment_white" width="24" height="24"/>
+        <image name="saving_white" width="24" height="24"/>
+        <image name="scan_qr_white" width="24" height="24"/>
         <image name="transfers_white" width="24" height="24"/>
         <namedColor name="MainText3Color">
             <color red="0.20000001788139343" green="0.20000001788139343" blue="0.20000001788139343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -30,7 +30,7 @@ extension CCHomeViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = RGBCOLOR(r: 246, g: 247, b: 250)
+        self.view.backgroundColor = RGBCOLOR(r: 243, g: 246, b: 248)
         self.headerView.isHidden = true
         
         setUI()

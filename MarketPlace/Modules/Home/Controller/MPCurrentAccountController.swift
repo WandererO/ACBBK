@@ -13,7 +13,7 @@ class MPCurrentAccountController: BaseHiddenNaviController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Current account(s)".localString()
-        self.view.backgroundColor = RGBCOLOR(r: 246, g: 247, b: 250)
+        self.view.backgroundColor = RGBCOLOR(r: 243, g: 246, b: 248)
         topViewRightBtn.setImage(UIImage(named: "image5"), for: .normal)
         topViewRightBtn.backgroundColor = RGBCOLOR(r: 240, g: 249, b: 255)
         topViewRightBtn.corner(cornerRadius: 16)
