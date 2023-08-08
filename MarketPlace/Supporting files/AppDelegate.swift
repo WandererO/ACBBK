@@ -180,8 +180,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        
-        
         homeVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "Home".localString(), image: UIImage(named: "account_inactive"), selectedImage: UIImage(named: "account_active"))
         QRVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "QR Code".localString(), image: UIImage(named: "Scan_QR_inactive"), selectedImage: UIImage(named: ""))
         transferVC.tabBarItem = ESTabBarItem.init(BaseTabbarMiddleItemView(), title: "Transfer".localString(), image: UIImage(named: "transfer_inactive"), selectedImage: UIImage(named: "transfer_active"))
@@ -228,7 +226,8 @@ class BaseTabbarMiddleItemView:ESTabBarItemContentView {
         self.imageView.backgroundColor = .white
 
 //        self.imageView.layer.cornerRadius = 35
-        self.imageView.size = CGSize(width: 100, height: 100)
+//        self.imageView.size = CGSize(width: 200, height: 200)
+        self.isMiddleSpec = true
         self.insets = UIEdgeInsets.init(top: -32, left: 0, bottom: 0, right: 0)
         self.superview?.bringSubviewToFront(self)
 
