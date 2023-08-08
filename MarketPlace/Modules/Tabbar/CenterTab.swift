@@ -19,6 +19,7 @@ class CenterTab: UITabBar {
     var addDelegate : CenterTabDelegate?
     var transImage = UIImageView()
     var transLable = UILabel()
+    let imgBg = UIView()
    
     
     override init(frame: CGRect) {
@@ -102,19 +103,26 @@ class CenterTab: UITabBar {
         
         addView.backgroundColor = .clear
 //        addView.tag = 1005
+
+        imgBg.backgroundColor = .white
+        imgBg.corner(cornerRadius: 25)
+        addView.addSubview(imgBg)
+        
         //添加一张图
         transImage.image = UIImage(named: "transfer_inactive")
-        transImage.IB_cornerRadius = 20
-        transImage.backgroundColor = .white
+//        transImage.IB_cornerRadius = 20
+        transImage.backgroundColor = .clear
         
         transLable.text = "Transfer"
-        transLable.font = UIFont.systemFont(ofSize: 9)
+        transLable.font = FONT_M(size: 10)
         transLable.textColor = RGBCOLOR(r: 86, g: 86, b: 86)
         transLable.numberOfLines = 2
         transLable.textAlignment = .center
         
+        
+        
         //添加一个文本
-        addView.addSubview(transImage)
+//        addView.addSubview(transImage)
         addView.addSubview(transLable)
          
       
@@ -156,6 +164,12 @@ class CenterTab: UITabBar {
 //            index+=1
 //        }
         
+    
+        imgBg.snp.makeConstraints { make in
+            make.centerX.equalTo(addView)
+            make.width.height.equalTo(50)
+            make.top.equalTo(addView.snp.top).offset(-10)
+        }
         
         transLable.snp.makeConstraints { make in
             make.bottom.equalTo(addView)
@@ -163,11 +177,11 @@ class CenterTab: UITabBar {
             make.height.equalTo(13) 
         }
         
-        
+        imgBg.addSubview(transImage)
         transImage.snp.makeConstraints { make in
             make.centerX.equalTo(addView)
-            make.width.height.equalTo(40)
-            make.top.equalTo(addView)
+            make.width.height.equalTo(30)
+            make.top.equalToSuperview().offset(10)
         }
      
         publishButton.snp.makeConstraints { make in

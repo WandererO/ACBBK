@@ -11,7 +11,7 @@ class MPMoreViewController: BaseHiddenNaviController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = RGBCOLOR(r: 243, g: 246, b: 248)
         // Do any additional setup after loading the view.
     }
 

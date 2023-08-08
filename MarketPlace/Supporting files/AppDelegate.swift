@@ -118,26 +118,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        let tabbar = ESTabBarController()
-//        SCREEN_WIDTH
-        let homeVC = CCHomeViewController()
-        let QRVC = MPQRCodeController()
-        let transferVC = MPTransferController()
-        let paymentVC = MPPaymentController()
-        let moreVC = MPMoreViewController()
-        
-        let bgV = UIView()
-        bgV.backgroundColor = RGBCOLOR(r: 236, g: 239, b: 238)
-        bgV.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
-        tabbar.view.addSubview(bgV)
-        tabbar.view.sendSubviewToBack(bgV)
-        
-        let bgImg = UIImageView()
-        bgImg.image = UIImage(named: "bottom-bar-bg")
-        bgImg.frame = CGRect(x: 0, y: SCREEN_HEIGHT - TABBAR_HEIGHT - 10, width: SCREEN_WIDTH, height: TABBAR_HEIGHT + 10)
-        bgImg.contentMode = .scaleAspectFill
-        tabbar.view.addSubview(bgImg)
-        tabbar.view.insertSubview(bgImg, at: 1)
+//        let tabbar = ESTabBarController()
+////        SCREEN_WIDTH
+//        let homeVC = CCHomeViewController()
+//        let QRVC = MPQRCodeController()
+//        let transferVC = MPTransferController()
+//        let paymentVC = MPPaymentController()
+//        let moreVC = MPMoreViewController()
+//
+//        let bgV = UIView()
+//        bgV.backgroundColor = RGBCOLOR(r: 236, g: 239, b: 238)
+//        bgV.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+//        tabbar.view.addSubview(bgV)
+//        tabbar.view.sendSubviewToBack(bgV)
+//
+//        let bgImg = UIImageView()
+//        bgImg.image = UIImage(named: "bottom-bar-bg")
+//        bgImg.frame = CGRect(x: 0, y: SCREEN_HEIGHT - TABBAR_HEIGHT - 10, width: SCREEN_WIDTH, height: TABBAR_HEIGHT + 10)
+//        bgImg.contentMode = .scaleAspectFill
+//        tabbar.view.addSubview(bgImg)
+//        tabbar.view.insertSubview(bgImg, at: 1)
         
         //点击拦截
 //        tabbar.shouldHijackHandler = { tabbar, viewContro, idx in
@@ -180,17 +180,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        homeVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "Home".localString(), image: UIImage(named: "account_inactive"), selectedImage: UIImage(named: "account_active"))
-        QRVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "QR Code".localString(), image: UIImage(named: "Scan_QR_inactive"), selectedImage: UIImage(named: ""))
-        transferVC.tabBarItem = ESTabBarItem.init(BaseTabbarMiddleItemView(), title: "Transfer".localString(), image: UIImage(named: "transfer_inactive"), selectedImage: UIImage(named: "transfer_active"))
-        paymentVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "Payment".localString(), image: UIImage(named: "bar_property_dark"), selectedImage: UIImage(named: "bar_property_light"))
-        moreVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "More".localString(), image: UIImage(named: "more_inactive"), selectedImage: UIImage(named: "more_active"))
-        
-        lazy var baseHomeNav = BaseNavigationController.init(rootViewController: homeVC)
-        lazy var topUpNav = BaseNavigationController.init(rootViewController: QRVC)
-        lazy var QRNav = BaseNavigationController.init(rootViewController: transferVC)
-        lazy var internalNav = BaseNavigationController.init(rootViewController: paymentVC)
-        lazy var quickNav = BaseNavigationController.init(rootViewController: moreVC)
+//        homeVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "Home".localString(), image: UIImage(named: "account_inactive"), selectedImage: UIImage(named: "account_active"))
+//        QRVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "QR Code".localString(), image: UIImage(named: "Scan_QR_inactive"), selectedImage: UIImage(named: ""))
+//        transferVC.tabBarItem = ESTabBarItem.init(BaseTabbarMiddleItemView(), title: "Transfer".localString(), image: UIImage(named: "transfer_inactive"), selectedImage: UIImage(named: "transfer_active"))
+//        paymentVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "Payment".localString(), image: UIImage(named: "bar_property_dark"), selectedImage: UIImage(named: "bar_property_light"))
+//        moreVC.tabBarItem = ESTabBarItem.init(BaseTabbarItemView(), title: "More".localString(), image: UIImage(named: "more_inactive"), selectedImage: UIImage(named: "more_active"))
+//
+//        lazy var baseHomeNav = BaseNavigationController.init(rootViewController: homeVC)
+//        lazy var topUpNav = BaseNavigationController.init(rootViewController: QRVC)
+//        lazy var QRNav = BaseNavigationController.init(rootViewController: transferVC)
+//        lazy var internalNav = BaseNavigationController.init(rootViewController: paymentVC)
+//        lazy var quickNav = BaseNavigationController.init(rootViewController: moreVC)
         
         
         

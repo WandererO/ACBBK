@@ -65,7 +65,7 @@ class MainTC: UITabBarController,CenterTabDelegate {
         
         
         let nav2 = getChildController(title:"Payment",
-                                      childVC: paymentVC, selectedImageName: "bar_property_light", normalImageName: "bar_property_dark")
+                                      childVC: paymentVC, selectedImageName: "payment_active", normalImageName: "payment_inactive")
          
         let nav3 = getChildController(title:"More",
                                       childVC: moreVC, selectedImageName: "more_active", normalImageName: "more_inactive")
