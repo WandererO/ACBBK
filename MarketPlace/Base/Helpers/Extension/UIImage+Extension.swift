@@ -9,6 +9,24 @@ import Foundation
 import UIKit
 
 extension UIImage{
+    
+    /// 返回一张纯颜色的图像
+    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        
+        if size.width <= 0 || size.height <= 0 { return nil }
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
+        
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        self.init(cgImage: image.cgImage!, scale: 2, orientation: .up)
+    }
+    
     /// 将颜色转换为图片
     ///
     /// - Parameter color: UIColor

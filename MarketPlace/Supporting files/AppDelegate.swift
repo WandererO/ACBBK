@@ -194,9 +194,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        tabbar.viewControllers = [baseHomeNav, topUpNav, QRNav, internalNav,quickNav]
+//        tabbar.viewControllers = [baseHomeNav, topUpNav, QRNav, internalNav,quickNav]
         
-        self.window?.rootViewController = tabbar
+        
+        let tabbarController = MainTC()
+        
+        self.window?.rootViewController = tabbarController
         self.window?.makeKeyAndVisible()
     }
 }
@@ -223,7 +226,7 @@ class BaseTabbarMiddleItemView:ESTabBarItemContentView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.imageView.backgroundColor = .white
+        self.imageView.backgroundColor = .red
 
 //        self.imageView.layer.cornerRadius = 35
 //        self.imageView.size = CGSize(width: 200, height: 200)

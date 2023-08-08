@@ -124,6 +124,8 @@
 		98AFF7FB280EC6E70035387C /* NetWorkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFF7FA280EC6E70035387C /* NetWorkModel.swift */; };
 		98B074D52811386A007B7015 /* NetWorkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B074D42811386A007B7015 /* NetWorkApi.swift */; };
 		A9554F5628C3C22700D1CBA4 /* UIlabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9554F5528C3C22700D1CBA4 /* UIlabel+Extension.swift */; };
+		C2B0F3692A81E87B001278EF /* MainTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F3672A81E87B001278EF /* MainTC.swift */; };
+		C2B0F36A2A81E87B001278EF /* CenterTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F3682A81E87B001278EF /* CenterTab.swift */; };
 		C2E75A332A67E355005A0BF5 /* NSObject+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E75A322A67E355005A0BF5 /* NSObject+Extend.swift */; };
 		C2E75A352A681962005A0BF5 /* UIViewController+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E75A342A681962005A0BF5 /* UIViewController+Extend.swift */; };
 		C2EF818D2A6A52BB00432A2B /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EF818C2A6A52BB00432A2B /* CommonUtil.swift */; };
@@ -304,6 +306,8 @@
 		98AFF7FA280EC6E70035387C /* NetWorkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkModel.swift; sourceTree = "<group>"; };
 		98B074D42811386A007B7015 /* NetWorkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkApi.swift; sourceTree = "<group>"; };
 		A9554F5528C3C22700D1CBA4 /* UIlabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel+Extension.swift"; sourceTree = "<group>"; };
+		C2B0F3672A81E87B001278EF /* MainTC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTC.swift; sourceTree = "<group>"; };
+		C2B0F3682A81E87B001278EF /* CenterTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTab.swift; sourceTree = "<group>"; };
 		C2E75A322A67E355005A0BF5 /* NSObject+Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extend.swift"; sourceTree = "<group>"; };
 		C2E75A342A681962005A0BF5 /* UIViewController+Extend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extend.swift"; sourceTree = "<group>"; };
 		C2EF818C2A6A52BB00432A2B /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
@@ -855,6 +859,7 @@
 		98AFF7D7280EA05F0035387C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C2B0F3662A81E874001278EF /* Tabbar */,
 				587317E22850F73100D5F867 /* Home */,
 				0438E2582A7CE14F00B1A309 /* QRCode */,
 				0438E25D2A7CE15700B1A309 /* Transfer */,
@@ -935,6 +940,15 @@
 				22609319299F4BE400B284DB /* iconfont.woff2 */,
 			);
 			path = iconfont;
+			sourceTree = "<group>";
+		};
+		C2B0F3662A81E874001278EF /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				C2B0F3682A81E87B001278EF /* CenterTab.swift */,
+				C2B0F3672A81E87B001278EF /* MainTC.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		F71E164E280FBC2F007F01D2 /* Controller */ = {
@@ -1273,6 +1287,7 @@
 				98AFF791280E979F0035387C /* ViewController.swift in Sources */,
 				96FFAB52285E318F004D321D /* CodeTextField.swift in Sources */,
 				043448BE2A7025C700DA41BA /* MPPublicViewModel.swift in Sources */,
+				C2B0F36A2A81E87B001278EF /* CenterTab.swift in Sources */,
 				F74A5BEF2816C0B30096AD24 /* UserManager.swift in Sources */,
 				C2EF81912A6A55C900432A2B /* BaseAlertVC.swift in Sources */,
 				9880B467281A673400508DB7 /* TostController.swift in Sources */,
@@ -1344,6 +1359,7 @@
 				047FB87829AF6AC000B652F5 /* InputViews.swift in Sources */,
 				9880B463281A667300508DB7 /* TipsExtensions.swift in Sources */,
 				F7BF0990284454B0001AA9CF /* BaseTabBarController.swift in Sources */,
+				C2B0F3692A81E87B001278EF /* MainTC.swift in Sources */,
 				989923DB2848618200390D57 /* HSWindowAdapter.swift in Sources */,
 				F77F9C8E281146A6005BEEDF /* BaseViewController.swift in Sources */,
 				585D0DC728561E1A00993291 /* FSPagerView.swift in Sources */,
