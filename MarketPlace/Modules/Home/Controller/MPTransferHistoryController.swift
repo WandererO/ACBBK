@@ -9,6 +9,8 @@ import UIKit
 
 class MPTransferHistoryController: BaseHiddenNaviController {
     
+    let viewModel = MPPublicViewModel()
+    
     lazy var tableView : BaseTableView = {
         
         let table = BaseTableView(frame: CGRect.zero, style: .grouped)
@@ -16,6 +18,7 @@ class MPTransferHistoryController: BaseHiddenNaviController {
         table.backgroundColor = .clear
         table.dataSource = self
         table.delegate = self
+        table.estimatedRowHeight = 170
         table.separatorStyle = .none
         table.register(UINib(nibName: "MPTranstionCell", bundle: nil), forCellReuseIdentifier: "MPTranstionCell")
         table.autoresizingMask  = .flexibleHeight
@@ -29,6 +32,7 @@ class MPTransferHistoryController: BaseHiddenNaviController {
         topViewRightBtn.setImage(UIImage(named: "filter"), for: .normal)
         
         setUI()
+        reuestData()
     }
     
     func setUI(){
@@ -56,30 +60,40 @@ class MPTransferHistoryController: BaseHiddenNaviController {
             make.top.equalTo(tipLab.snp.bottom).offset(15)
         }
     }
+    
+    func reuestData() {
+        viewModel.requestTransferRecord(token: "", type: "0", startTime: "", endTime: "").subscribe(onNext: {[weak self] _ in
+            guard let self = self else {return}
+            
+            self.tableView.reloadData()
+            
+        }).disposed(by: disposeBag)
+    }
 
 }
 
 extension MPTransferHistoryController : UITableViewDataSource , UITableViewDelegate{
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.recordeModel.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 3
+        let sectionModel = viewModel.recordeModel[section]
+        return sectionModel.list.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 103
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MPTranstionCell", for: indexPath) as! MPTranstionCell
 //        cell.corner(cornerRadius: 6)
+        let sectionModel = viewModel.recordeModel[indexPath.section]
         cell.selectionStyle = .none
-        
+        cell.model = sectionModel.list[indexPath.row]
         return cell
     }
     
@@ -88,7 +102,7 @@ extension MPTransferHistoryController : UITableViewDataSource , UITableViewDeleg
         sectionV.backgroundColor = RGBCOLOR(r: 246, g: 247, b: 250)
         
         let timeLab = UILabel()
-        timeLab.text  = "25/07/2023"
+        timeLab.text  = viewModel.recordeModel[section].date
         timeLab.textColor = kBlackTextColor
         timeLab.font = FONT_M(size: 16)
         sectionV.addSubview(timeLab)

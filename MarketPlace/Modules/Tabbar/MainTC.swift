@@ -53,10 +53,10 @@ class MainTC: UITabBarController,CenterTabDelegate {
         centerTabar.addDelegate = self
         self.setValue(centerTabar, forKey: "tabBar")
   
-        let nav0 = getChildController(title:"Home",
+        let nav0 = getChildController(title:"Home".localString(),
                                       childVC: homeVC, selectedImageName: "account_active", normalImageName: "account_inactive")
  
-        let nav1 = getChildController(title:"QR Code",
+        let nav1 = getChildController(title:"QR Code".localString(),
                                       childVC: QRVC, selectedImageName: "Scan_QR_inactive", normalImageName: "Scan_QR_inactive")
          
         //中间
@@ -64,10 +64,10 @@ class MainTC: UITabBarController,CenterTabDelegate {
                                       childVC: transferVC, selectedImageName: "", normalImageName: "")
         
         
-        let nav2 = getChildController(title:"Payment",
+        let nav2 = getChildController(title:"Payment".localString(),
                                       childVC: paymentVC, selectedImageName: "payment_active", normalImageName: "payment_inactive")
          
-        let nav3 = getChildController(title:"More",
+        let nav3 = getChildController(title:"More".localString(),
                                       childVC: moreVC, selectedImageName: "more_active", normalImageName: "more_inactive")
       
         

@@ -63,6 +63,10 @@ Vietnamese family</string>
                 <constraint firstItem="iFC-Kr-DSB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="zmQ-bv-LEm"/>
             </constraints>
             <size key="customSize" width="381" height="107"/>
+            <connections>
+                <outlet property="contentLab" destination="iLZ-dg-8Kl" id="bBR-iF-ZtQ"/>
+                <outlet property="titleLab" destination="caz-Qj-sih" id="LO4-Qf-9ad"/>
+            </connections>
             <point key="canvasLocation" x="390.07633587786256" y="39.7887323943662"/>
         </collectionViewCell>
     </objects>

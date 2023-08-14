@@ -60,7 +60,7 @@ extension RequestEnum: TargetType {
         case .login:
             return "/api/user/login"
         case .getTransferRecord:
-            return "/api/user/changeList"
+            return "/api/user/changeDateList"
             
 
         default :

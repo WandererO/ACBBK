@@ -80,7 +80,7 @@ class CenterTab: UITabBar {
     //恢复选中状态
     public func nomilImageType(){
         transImage.image = UIImage(named: "transfer_inactive")
-        transLable.textColor = RGBCOLOR(r: 86, g: 86, b: 86)
+        transLable.textColor = UIColor.hexColor("999999")//RGBCOLOR(r: 86, g: 86, b: 86)
     }
     
     @objc func addButtonClick(){
@@ -113,9 +113,9 @@ class CenterTab: UITabBar {
 //        transImage.IB_cornerRadius = 20
         transImage.backgroundColor = .clear
         
-        transLable.text = "Transfer"
+        transLable.text = "Transfer".localString()
         transLable.font = FONT_M(size: 10)
-        transLable.textColor = RGBCOLOR(r: 86, g: 86, b: 86)
+        transLable.textColor = UIColor.hexColor("999999")//RGBCOLOR(r: 86, g: 86, b: 86)
         transLable.numberOfLines = 2
         transLable.textAlignment = .center
         

@@ -96,22 +96,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func requestLogin() {
-//        let pssword = Archive.getDefaultsForKey(key: "password")
-//        let account = Archive.getDefaultsForKey(key: "account")
-//
-//        loginVM.requestLogin(account: account, psswd: pssword).subscribe(onNext: {[weak self] _ in
-//            guard let self = self else {return}
-//
-//            let token = self.loginVM.loginModel.userinfo?.token ?? ""
-//            let money = self.loginVM.loginModel.userinfo?.money ?? ""
-//            let account = self.loginVM.loginModel.userinfo?.mobile ?? ""
-//            let nickName = self.loginVM.loginModel.userinfo?.nickname ?? ""
-//            Archive.setDefaults(value: money, key: "money")
-//            Archive.setDefaults(value: account, key: "mobile")
-//            Archive.setDefaults(value: nickName, key: "nickName")
-//            Archive.saveToken(token)
-//            NotificationCenter.default.post(name: loginSuccessNotification, object: self)
-//        }).disposed(by: disposeBag)
+        let pssword = Archive.getDefaultsForKey(key: "password")
+        let account = Archive.getDefaultsForKey(key: "account")
+
+        loginVM.requestLogin(account: account, psswd: pssword).subscribe(onNext: {[weak self] _ in
+            guard let self = self else {return}
+
+            let token = self.loginVM.loginModel.userinfo?.token ?? ""
+            let money = self.loginVM.loginModel.userinfo?.money ?? ""
+            let account = self.loginVM.loginModel.userinfo?.mobile ?? ""
+            let nickName = self.loginVM.loginModel.userinfo?.nickname ?? ""
+            Archive.setDefaults(value: money, key: "money")
+            Archive.setDefaults(value: account, key: "mobile")
+            Archive.setDefaults(value: nickName, key: "nickName")
+            Archive.saveToken(token)
+            NotificationCenter.default.post(name: loginSuccessNotification, object: self)
+        }).disposed(by: disposeBag)
     }
     
     func setTabbarController() {//自定义tabbar

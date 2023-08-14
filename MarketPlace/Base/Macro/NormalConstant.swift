@@ -194,6 +194,15 @@ func FONT_G(size: CGFloat) -> (UIFont){
     return UIFont(name: "Grantha Sangam MN", size: size)!
 }
 
+func FONT_Cus(size: CGFloat) -> (UIFont){
+//    let font = UIFont(name: "Grantha Sangam MN", size: size)
+    return UIFont(name: "HelveticaNeue-Bold", size: size)!
+}
+func FONT_HN(size: CGFloat) -> (UIFont){
+//    let font = UIFont(name: "Grantha Sangam MN", size: size)
+    return UIFont(name: "HelveticaNeue", size: size)!
+}
+
 
 func FONT_MONO_R(size: CGFloat) -> (UIFont){
     return UIFont.monospacedDigitSystemFont(ofSize: size, weight: .regular)

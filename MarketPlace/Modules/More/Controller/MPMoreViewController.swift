@@ -15,15 +15,23 @@ class MPMoreViewController: BaseHiddenNaviController {
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutClick(_ sender: Any) {
+        userManager.logout()
     }
-    */
-
+    
+    @IBAction func languesClcik(_ sender: Any) {
+        let popV = MPBottomPopUpTableController()
+        popV.isShowBottomView = true
+        popV.datas = ["英语","越语"]
+        popV.didselect = {[weak self] row in
+            guard let self = self else{return}
+            if row == 0 {
+                LanguageManager.setLanguage(.english)
+            }else{
+                LanguageManager.setLanguage(.Vietnamese)
+            }
+        }
+        popV.show(on:self)
+    }
+    
 }

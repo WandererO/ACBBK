@@ -30,7 +30,7 @@ class MPHomeNavigationView: BaseView {
         let lab = UILabel()
         lab.text = "NAME"
         lab.textColor = kBlackTextColor
-        lab.font = FONT_SB(size: 16)
+        lab.font = FONT_Cus(size: 16)
         return lab
     }()
     
@@ -46,6 +46,8 @@ class MPHomeNavigationView: BaseView {
         super.init(frame: frame)
         
 //        self.backgroundColor = .gray
+        
+        nameLab.text = Archive.getDefaultsForKey(key: "nickName")
         
         self.addSubview(headerBtn)
         headerBtn.snp.makeConstraints { make in

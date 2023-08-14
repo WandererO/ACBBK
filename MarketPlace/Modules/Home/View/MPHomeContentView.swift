@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AttributedString
 
 class MPHomeContentView: BaseView {
     
@@ -72,7 +73,7 @@ class MPHomeContentView: BaseView {
         
         let servicesLab = UILabel()
         servicesLab.text = "Bank services".localString()
-        servicesLab.textColor = kBlack3TextColor
+        servicesLab.textColor = kBlackTextColor
         servicesLab.font = FONT_R(size: 16)
         scrollView.addSubview(servicesLab)
         servicesLab.snp.makeConstraints { make in
@@ -88,6 +89,7 @@ class MPHomeContentView: BaseView {
         overViewBtn.snp.makeConstraints { make in
             make.right.equalTo(-15)
             make.top.equalTo(infoImage.snp.bottom).offset(50)
+            make.height.equalTo(20)
         }
         
         let serviceV = MPHomeServicesView()
@@ -108,7 +110,7 @@ class MPHomeContentView: BaseView {
         
         let insuranceLab = UILabel()
         insuranceLab.text = "Insurance services".localString()
-        insuranceLab.textColor = kBlack3TextColor
+        insuranceLab.textColor = kBlackTextColor
         insuranceLab.font = FONT_R(size: 16)
         scrollView.addSubview(insuranceLab)
         insuranceLab.snp.makeConstraints { make in
@@ -127,7 +129,7 @@ class MPHomeContentView: BaseView {
         
         let otherLab = UILabel()
         otherLab.text = "Other services".localString()
-        otherLab.textColor = kBlack3TextColor
+        otherLab.textColor = kBlackTextColor
         otherLab.font = FONT_R(size: 16)
         scrollView.addSubview(otherLab)
         otherLab.snp.makeConstraints { make in
@@ -159,7 +161,7 @@ class MPHomeAvailableView : BaseView {
     
     lazy var eyeBtn : ZQButton = {
         let btn = ZQButton()
-        btn.setImage(UIImage(named: "eye-close"), for: .normal)
+        btn.setImage(UIImage(named: "eye-open"), for: .normal)
         return btn
     }()
     
@@ -175,6 +177,9 @@ class MPHomeAvailableView : BaseView {
         super.init(frame: frame)
         self.backgroundColor = RGBCOLOR(r: 233, g: 240, b: 249)
         self.corner(cornerRadius: 8)
+        
+        let amount = Archive.getDefaultsForKey(key: "money").getShowPrice()
+        amountLab.attributed.text = "\(amount, .foreground(RGBCOLOR(r: 33, g: 111, b: 241)), .font(FONT_Cus(size: 16))) \("VND", .foreground(RGBCOLOR(r: 18, g: 108, b: 235)), .font(FONT_R(size: 16)))"
         
         self.addSubview(eyeBtn)
         eyeBtn.snp.makeConstraints { make in
@@ -222,6 +227,9 @@ class MPHomeRewardsView : UIButton  {
         self.backgroundColor = RGBCOLOR(r: 233, g: 240, b: 249)
         self.corner(cornerRadius: 8)
         
+        amountLab.attributed.text = "\("500", .foreground(RGBCOLOR(r: 33, g: 111, b: 241)), .font(FONT_Cus(size: 16))) \("point", .foreground(RGBCOLOR(r: 18, g: 108, b: 235)), .font(FONT_R(size: 16)))"
+        
+        
         let labs = UILabel()
         labs.text = "ACB Rewards".localString()
         labs.textColor = kBlack3TextColor
@@ -264,6 +272,10 @@ class MPHomeServicesView : BaseView {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.corner(cornerRadius: 10)
+        
+        self.clipsToBounds = false
+        self.setShadow(width: 0, bColor: kLineColor, sColor: kBlackTextColor, offset: CGSize(width: 0, height: 6), opacity: 0.1, radius: 8)
+        self.layer.shadowRadius = 14
         
         let titleAry = ["Accounts","Savings","Loans", "Cards"]
         let imgAry = ["Bank","Saving","Loan","Card"]
@@ -319,7 +331,7 @@ class MPButtons:UIButton {
     
     lazy var titleLab : UILabel = {
         let lab = UILabel()
-        lab.textColor = kBlack3TextColor
+        lab.textColor = kBlackTextColor
         lab.font = FONT_R(size: 14)
         lab.textAlignment = .center
         return lab
@@ -357,6 +369,10 @@ class MPHomeInsuranceView : UIButton {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.corner(cornerRadius: 10)
+        
+        self.clipsToBounds = false
+        self.setShadow(width: 0, bColor: kLineColor, sColor: kBlackTextColor, offset: CGSize(width: 0, height: 6), opacity: 0.1, radius: 8)
+        self.layer.shadowRadius = 14
         
         let linV = UIView()
         linV.backgroundColor = RGBCOLOR(r: 244, g: 191, b: 68)

@@ -28,23 +28,23 @@ class MPPublicViewModel: NSObject {
         return dataSubject
     }
     
-//    var recordeModel:[MPAccountModel] = []
-//    func requestTransferRecord(token:String, type:String, startTime:String, endTime:String)->(PublishSubject<Any>) {
-//        let dataSubject = PublishSubject<Any>()
-//        NetWorkRequest(RequestEnum.getTransferRecord(type: type, startTime: startTime, endTime: endTime), modelType: MPAccountModel.self) { model in
-//            
-//            if let model = model as? [MPAccountModel] {
-//                self.recordeModel = model
-//                dataSubject.onNext(true)
-//            }
-//
-//        } failureCallback: { code, message in
-//
-//            dataSubject.onError(NSError(domain: message, code: code))
-//            print("\(code)")
-//            HudManager.showOnlyText(message)
-//        }
-//        return dataSubject
-//    }
+    var recordeModel:[MPTransferListModel] = []
+    func requestTransferRecord(token:String, type:String, startTime:String, endTime:String)->(PublishSubject<Any>) {
+        let dataSubject = PublishSubject<Any>()
+        NetWorkRequest(RequestEnum.getTransferRecord(type: type, startTime: startTime, endTime: endTime), modelType: MPTransferListModel.self) { model in
+            
+            if let model = model as? [MPTransferListModel] {
+                self.recordeModel = model
+                dataSubject.onNext(true)
+            }
+
+        } failureCallback: { code, message in
+
+            dataSubject.onError(NSError(domain: message, code: code))
+            print("\(code)")
+            HudManager.showOnlyText(message)
+        }
+        return dataSubject
+    }
 
 }
